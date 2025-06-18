@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors(
  {
-   origin:'http://localhost:5174',
+   origin:'https://zerocode-fe-assignment-tw2y.vercel.app/',
    credentials:true
  }
 ));
