@@ -29,7 +29,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
       return;
     }
 
-    const token = jwt.sign({ id: user._id }, process.env.SECKEY as string, { expiresIn: '1d' });
+    const token = jwt.sign({ id: user._id }, process.env.SECKEY , { expiresIn: '1d' });
 
     res.cookie('token', token, {
       httpOnly: true,
