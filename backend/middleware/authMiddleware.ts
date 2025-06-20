@@ -16,8 +16,14 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
       res.status(401).send({ success: false, message: 'Authentication required' });
       return;
     }
+const secret = process.env.SECKEY;
 
-    const decoded = jwt.verify(token, JSON.stringify(process.env.SECKEY));
+if (!secret) {
+  throw new Error("JWT Secret Key (SECKEY) not defined in environment");
+}
+
+const decoded = jwt.verify(token, secret); // now secret is definitely a string
+
     req.user = decoded;
     console.log(req.user+'middleware');
     
