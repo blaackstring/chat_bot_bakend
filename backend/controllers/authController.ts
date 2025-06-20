@@ -31,11 +31,12 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const token = jwt.sign({ id: user._id }, process.env.SECKEY , { expiresIn: '1d' });
 
-    res.cookie('token', token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === 'production',
-      maxAge: 24 * 60 * 60 * 1000,
-    });
+res.cookie('token', token, {
+  httpOnly: true,
+  secure: true,         // required on HTTPS/Vercel
+  sameSite: 'None'      // allow cross-site cookies
+});
+
 
     res.status(200).send({
       success: true,
