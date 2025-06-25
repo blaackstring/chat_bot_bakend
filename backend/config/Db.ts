@@ -7,6 +7,6 @@ export const DbConnection = async(): Promise<void> => {
       console.log('DB connected');
     })
     .catch((error) => {
-      console.log('Error while DB connection:', error);
+      console.log('Error while DBef connection:', error);
     });
 };
