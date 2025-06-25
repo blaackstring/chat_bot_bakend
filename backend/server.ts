@@ -28,3 +28,4 @@ app.use('/api/v1/auth', authroute);
 app.listen(PORT, () => {
   console.log(`🚀 Server listening on http://localhost:${PORT}`);
 });
+
