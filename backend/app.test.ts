@@ -8,7 +8,7 @@ import { describe, it } from 'node:test';
 describe('Basic App Routes', () => {
 //   it('should return 404 on root / route', async () => {
 //     const res = await request(app).get('/');
-//     expect(res.statusCode).toBe(404);
+//     expect(res.statusCode).toBe(4004);
 //   });
 
 //   it('should return 404 on /api/v1/auth if no GET route is defined', async () => {
