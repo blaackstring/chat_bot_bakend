@@ -19,10 +19,11 @@ export const authMiddleware = (req: AuthRequest, res: Response, next: NextFuncti
 
 
 
-const decoded = jwt.verify(token,process.env.SECKEY); // now secret is definitely a string
+const decoded = jwt.verify(token,  process.env.SECKEY); // now secret is definitely a string
+
 
     req.user = decoded;
-    console.log(req.user+'middleware');
+
     
 
     next();
