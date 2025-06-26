@@ -12,14 +12,14 @@ provider:
 
 functions:
   Authhandler:
-    handler: handler.main
+    handler: handler.main  # 👈 this must match file & export
     events:
       - httpApi:
           path: /{proxy+}
           method: ANY
 
-package:
-  individually: true
+plugins:
+  - serverless-esbuild
 
 custom:
   esbuild:
@@ -28,4 +28,4 @@ custom:
     sourcemap: true
     exclude: ['aws-sdk']
     target: node20
-    platform: node  # ✅ this is required for esbuild (do not remove)
+    platform: node
