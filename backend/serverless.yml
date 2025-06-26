@@ -1,4 +1,4 @@
-service: Vo-1AI
+service: Vo-1AIBACKEND
 
 provider:
   name: aws
