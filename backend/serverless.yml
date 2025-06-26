@@ -1,4 +1,4 @@
-service: auth
+service: Vo-1AI
 
 provider:
   name: aws
@@ -11,7 +11,7 @@ provider:
     MONGO_URL: 'mongodb+srv://shahansiddique101:Shahan1234@cluster0.uzufb2d.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
 functions:
-  Authhandler:
+  Authhandlerbackend:
     handler: handler.main  # 👈 this must match file & export
     events:
       - httpApi:

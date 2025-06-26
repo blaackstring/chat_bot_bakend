@@ -24,14 +24,15 @@ jobs:
        run: npm install
        working-directory: backend
     
-     - name: Install Serverless Framework v3
-       run: npm install -g serverless@3
+
+     - name: Install Serverless Framework
+       run: npm install -g serverless
 
 
      - name: Deploy to AWS
        run: serverless deploy
        working-directory: backend
        env:
-         AWS_ACCESS_KEY_ID: ${{ secrets.ACCESSKEY }}
-         AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRETKEY }}
-   
+        AWS_ACCESS_KEY_ID: ${{ secrets.ACCESSKEY }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.SECRETKEY }}
+
