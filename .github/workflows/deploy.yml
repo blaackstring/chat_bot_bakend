@@ -24,9 +24,9 @@ jobs:
        run: npm install
        working-directory: backend
     
+     - name: Install Serverless Framework v3
+       run: npm install -g serverless@3
 
-     - name: Install Serverless Framework
-       run: npm install -g serverless
 
      - name: Deploy to AWS
        run: serverless deploy
